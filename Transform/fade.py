@@ -29,6 +29,3 @@ def fade(y):
   y_fade = torchaudio.transforms.Fade(fade_in_len=L_in,fade_out_len=L_out,fade_shape=shape)(y)
   S = MelSpec(y_fade,sr)
   return S
-
-S = fade(y)
-img = librosa.display.specshow(S.detach().numpy(), x_axis='time',y_axis='mel', sr=sr,fmax=sr/2,cmap='viridis')
