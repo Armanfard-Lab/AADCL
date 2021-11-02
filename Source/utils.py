@@ -103,3 +103,6 @@ def transform(y,sr=16000,mel = False):
       Train[i,0,:,:] = S
     Label = train_labels
   return Train, Label
+
+def anomaly_score(z,v_mean,v_cov):
+  return scipy.spatial.distance.mahalanobis(z,v_mean,v_cov)
