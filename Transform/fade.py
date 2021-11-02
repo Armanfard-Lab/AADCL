@@ -1,3 +1,13 @@
+import numpy as np
+import torch
+import torchaudio
+from torch import nn
+from torch.nn import functional as F
+from torch import Tensor
+import librosa
+import librosa.display
+device=torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
 def fade(y):
   
   shape_var = np.random.randint(0,5)
