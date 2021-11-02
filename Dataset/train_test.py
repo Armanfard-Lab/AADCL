@@ -21,7 +21,7 @@ import scipy
 device=torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
-def train_tes(train_size,device='valve',id=0):
+def train_test(train_size,device='valve',id=0):
   train_size = 0.75
   dir,label = audiodir(device,id)
   dir_abnormal,label_abnormal = audiodir(device,id,Data='abnormal')
