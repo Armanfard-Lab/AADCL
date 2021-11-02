@@ -75,3 +75,31 @@ def transform(y,sr=16000,mel = False):
     cls = 6
     S_dB = MelSpec(y,sr)
     return S_dB,cls
+
+  
+  def apply_transform(train_features,train_labels,state=0):
+  if state == 0: # Training
+    batch_size = train_features.size()[0]
+    Train = torch.zeros((2*batch_size,1,128,313))
+    Label_cls = torch.zeros(2*batch_size)
+
+    for i in range(0,train_features.size()[0]):
+      y = train_features[i]
+      S1,cls1 = transform(y)
+      Train[i,0,:,:] = S1
+      Label_cls[i] = cls1
+
+      S2,cls2 = transform(y)
+      Train[i+batch_size,0,:,:] = S2
+      Label_cls[i+batch_size] = cls2
+    #Label = torch.cat((train_labels,train_labels),0)
+    Label = Label_cls
+  else: # Test
+    batch_size = train_features.size()[0]
+    Train = torch.zeros((batch_size,1,128,313))
+    for i in range(0,train_features.size()[0]):
+      y = train_features[i]
+      S,cls = transform(y,mel=True)
+      Train[i,0,:,:] = S
+    Label = train_labels
+  return Train, Label
