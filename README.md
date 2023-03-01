@@ -5,12 +5,12 @@ PyTorch implementation of the paper "Semi-Supervised Acoustic Anomaly Detection 
 
 ## Citation
 
-You can find the preprint of our paper on [TechRxiv](https://www.techrxiv.org/articles/preprint/SELF-SUPERVISED_ACOUSTIC_ANOMALY_DETECTION_VIA_CONTRASTIVE_LEARNING/16828363).
+You can find our paper on [IEEE Xplore](https://ieeexplore.ieee.org/document/9746207).
 
 Please cite our paper if you use the results or codes of our work.
 
 ```
-Hojjati, Hadi; Armanfard, Narges (2021): SELF-SUPERVISED ACOUSTIC ANOMALY DETECTION VIA CONTRASTIVE LEARNING. TechRxiv. Preprint. https://doi.org/10.36227/techrxiv.16828363.v2 
+H. Hojjati and N. Armanfard, "Self-Supervised Acoustic Anomaly Detection Via Contrastive Learning," ICASSP 2022 - 2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), Singapore, Singapore, 2022, pp. 3253-3257, doi: 10.1109/ICASSP43922.2022.9746207.
 ```
 
 ## Abstract
